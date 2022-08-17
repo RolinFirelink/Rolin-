@@ -1,22 +1,22 @@
 现在我们来正式学习我们的Swagger，首先我们先来介绍下Swagger的由来
 
-- Swagger简介
+# Swagger简介
 
 这个简单来说就是我们的现在的时代都是前端和后端是分离开来的，这里会有两个团队，分别是前端团队和后端团队，而前端和后端的功能是分开的，是松耦合的形式的。即使没有后端，前端自己也是可以独立跑起来的
 
 而我们的前后端甚至可以部署在不同的服务器上，一般来说，我们是前端用于向用户提供服务，而后端则是向前端提供对应的数据。这里我们的前端获取后端数据的方式一般是通过后端提供的对应的接口来获取的，而前端则会通过利用postman等工具来测试后端提供的接口。这其实也就是我们常说的前后端分离
 
-![](D:/Rolin的学习笔记/youdaonote-pull/youdaonote/youdaonote-images/WEBRESOURCE1d0436942134c4141b64e1d5f8ea8212.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/WEBRESOURCE1d0436942134c4141b64e1d5f8ea8212.png)
 
 但是这个时候可能就会出现一个沟通上的问题，就是我们的前端和后端的人员怎么知道他们的前后端是正好能合适的呢？早期为了解决这个问题一般会制定对应的计划文档并实时更新，但是对于一些更加大型的项目来说，这也不好用。此时我们的Swagger就应用而生，其就是为了解决前后端的联调问题的
 
-![](D:/Rolin的学习笔记/youdaonote-pull/youdaonote/youdaonote-images/WEBRESOURCEedc2964600fa6c0ac14bdd54b2e491df.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/WEBRESOURCEedc2964600fa6c0ac14bdd54b2e491df.png)
 
 其本身是一个RestFul的Api文档的在线自动生成工具，支持多种语言且可以直接运行，并在线测试我们的API接口，这样前后端都只使用这一个软件就可以解决其联调问题了
 
 最后我们值得一提的是，如果我们想要在项目下使用Swagger，那么我们就要导入对应的jar包，其中以swagger2和swaggerui的jar包最为重要，这两个是我们的核心jar包
 
-- SpringBoot集成Swagger
+# SpringBoot集成Swagger
 
 接着我们来正式学习如何在我们的SpringBoot中集成Swagger，首先我们要引入对应的坐标的依赖，其代码如下
 
@@ -56,11 +56,11 @@ public class SwaggerConfig {
 
 当这些配置完成之后，我们的swagger服务就启动了，我们进入其对应的网址http://localhost:8080/swagger-ui.html，就可以查看到如下界面
 
-![](D:/Rolin的学习笔记/youdaonote-pull/youdaonote/youdaonote-images/WEBRESOURCE06a24debf48bfe84885eadd167b63ba0.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/WEBRESOURCE1016652b1b5255d332d8981b83dc2d1e.png)
 
 我们可以将界面分为四部分，如上图所示，我们接下来就直接开始做我们的案例，这里我们要经常查看源码，因为这玩意没啥正经教程，太简单了，所以咱们要学那还得看源码啊
 
-- 配置Swagger
+# 配置Swagger
 
 首先我们要搞清楚，我们之前做的是集成，而不是配置，那么我们现在就要来正式配置我们的Swagger了。我们首先要知道我们的Swagger的bean实例的对象是Docket，所以我们首先定义一个方法，其返回值为Docket，然后其上写入Bean注解，我们先简单整一个令其返回一个新的Docket对象，但是我们会发现其构造方法里会需要传入参数，我们点进去里面的源码里去看看
 
@@ -73,7 +73,7 @@ public class Docket implements DocumentationPlugin {
 
 然后我们往下拉，会看到这么一个构造方法
 
-```
+```java
 public Docket(DocumentationType documentationType) {
     this.apiInfo = ApiInfo.DEFAULT;
     this.groupName = "default";
@@ -169,11 +169,11 @@ public class SwaggerConfig {
 
 我们这里就令其返回一个对应的Docket对象，只不过这个Docket对象是经过了我们自己的设置的。最后我们这里值得一提的是，我们的ApiInfo对象是没有提供set方法的，我们要创建对应的对象只能通过构造方法，所以即使我们什么都不想写，我们也得放点参数进去，要不然没法整出这个对象来
 
-- Swagger配置扫描接口
+# Swagger配置扫描接口
 
  然后现在我们看我们的页面下的内容，可以看到我们这里有显示对应的不同请求（还有我们自己写的hello的请求），请求下还有各种请求方式，但是我们这里可以看到，不但我们的请求有，而且其他的请求，比如错误请求一类的也有，而这个错误请求其实并不是我们一开始想扫描到的，所以我们这里要学习我们自定义扫描包的路径的方法，这样我们就可以让我们的页面上只显示我们想要令其显示的请求了
 
-![](D:/Rolin的学习笔记/youdaonote-pull/youdaonote/youdaonote-images/WEBRESOURCE1016652b1b5255d332d8981b83dc2d1e.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/WEBRESOURCE06a24debf48bfe84885eadd167b63ba0.png)
 
 我们要设定我们的包，就需要使用到其对应的方法select()，这里同样需要使用链式的操作，我们首先在我们的Docket对象的后面写入.select()，可以看到里面需要一个build，那么我们就给其一个build，往下继续调用build()方法，调用了该方法之后我回去看我们的select()方法，就会发现其下只有paths和apis两个方法可以调用，我们先来看看apis方法，其需要传入一个RequestHandlerSelectors对象，该对象里可以指定我们的扫描接口的方式，我们先选择其下的basePackage方法，其就是指定包进行扫描的方法，往下只需要写入指定的要扫描的包的路径就可以了
 
@@ -215,7 +215,7 @@ public Docket docket(){
 
 我们这里调用了paths方法进行过滤，我们查看其源码会发现其括号内需要传入一个PathSelectors对象，我们调用其下的ant方法，通过该方法我们可以指定我们只需要哪些路径的方法，比如我们这里指定我们只要路径在Rolin下的方法，但实际上在我们自定义的类中，是没有这种类型的方法的，所以最后我们的结果一定是什么都得不到。同时该对象下还有ant()全不过滤以及none()全过滤的方法，这个作为了解就好了
 
-- 配置是否启动Swagger
+# 配置是否启动Swagger
 
 这个就更加简单了，还记得我们当初看Docket源码时的enabled成员属性吗？只要该属性为真，那么我们的Swagger就是启动的，如果为flase，那么直接就打不开了
 
@@ -248,11 +248,11 @@ public Docket docket(Environment environment){
 }
 ```
 
-- 配置API文档的分组
+# 配置API文档的分组
 
 接着我们来将API文档的分组，分组的方法很简单，就是直接利用链式方法调用其下的groupName()方法，然后往括号内传入我们要指定的字符串就行了，然后其就会正确在我们的对应的页面的右上方展示了，如果我们希望我们右上方的下拉框有多个分组的话，就只需要自己定义多个Bean，令其返回多个Docket就可以了，然后我们切换到对应的分组上就可以令其显示对应的数据了
 
-- Model实体类的注入
+# Model实体类的注入
 
 接着我们来看看我们的页面里的Models框，该框下有我们后台定义的实体类，这个实体类里有对应的描述，那么我们要如何将我们的定义的实体类加入到这里来呢？其实我们根本就不用考虑这些有的没的，他都帮我们做好了，只要我们返回了实体类，那么该实体类就会被加载到Models中
 
@@ -330,5 +330,5 @@ public class HelloController {
 
 1. 其支持非常方便快捷的在线测试
 
-垃圾postman，狗都不用。最后我们要注意的是，出于安全考虑，我们在我们的项目正式项目发布的时候，一定要关闭Swagger
+最后我们要注意的是，出于安全考虑，我们在我们的项目正式项目发布的时候，一定要关闭Swagger
 

@@ -1,10 +1,14 @@
+# Nginx介绍
+
 最后我们来学习Nginx服务器，首先我们来看看什么是Nginx服务器
 
-![](D:/Rolin的学习笔记/youdaonote-pull/youdaonote/youdaonote-images/WEBRESOURCE845e081911138f1224e7b8575c6de668.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/WEBRESOURCE845e081911138f1224e7b8575c6de668.png)
+
+# Nginx安装
 
 接下来我们来看看Nginx在Linux系统里的安装过程
 
-![](D:/Rolin的学习笔记/youdaonote-pull/youdaonote/youdaonote-images/WEBRESOURCEded06708c1bb7e2aa4c2d58abaeee6c5.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/WEBRESOURCEded06708c1bb7e2aa4c2d58abaeee6c5.png)
 
 完整的安装过程如下显示
 
@@ -104,9 +108,11 @@ location / {
 
 http://192.168.203.138
 
+# Nginx发布项目
+
 最后我们来看看Nginx服务器发布项目的过程
 
-![](D:/Rolin的学习笔记/youdaonote-pull/youdaonote/youdaonote-images/WEBRESOURCE13d88442fafacb30239d9ada4c103bcd.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/WEBRESOURCE13d88442fafacb30239d9ada4c103bcd.png)
 
 当然实际上我发布项目的时候不能完全的依葫芦画瓢，起码IP地址得改改是吧
 

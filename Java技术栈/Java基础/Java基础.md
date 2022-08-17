@@ -32,7 +32,7 @@
 
 方法重载(Overload)，对于多种功能相似的方法，方法重载能够使程序员再调用多个方法时就像在调用一种方法，不但更方便，也能够使代码美观
 
-![方法重载](D:\Rolin的学习笔记\img\Java基础\方法重载.png)
+![方法重载](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/方法重载.png)
 
 ## 方法递归
 
@@ -44,14 +44,14 @@
 
 java中的构造方法是对java中new一个对象的之所以然的解释，new后面所存在的东西，就是构造方法
 
-构造方法的构建规则如下图所示![](D:\Rolin的学习笔记\img\Java基础\构造方法.png)
+构造方法的构建规则如下图所示![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/方法执行与内存分析.png)
 
 1. 一个类中可以存在多个不同的构造方法，其可以构成方法重载
 2. 如果类中没有提供任何构造方法，则会默认提供一个无参的构造方法，该机制称为**缺省构造器**
 3. 如果类中存在构造方法，则缺省构造器将不再生效
 4. 构造方法存在的意义有二，一是创建对象，二是初始化对象中的成员变量
 
-![构造方法的作用](D:\Rolin的学习笔记\img\Java基础\构造方法2.png)
+![构造方法的作用](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/构造方法2.png)
 
 当方法有static修饰符修饰的时候，用类名.方法名();调用
 
@@ -87,11 +87,11 @@ java中的构造方法是对java中new一个对象的之所以然的解释，new
 
 在JVM的划分上有三块主要的内存空间**方法区内存**、**堆内存**、**栈内存**
 
-![](D:\Rolin的学习笔记\img\Java基础\方法执行与内存分析.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/构造方法.png)
 
 栈内存具有以下特点
 
-![](D:\Rolin的学习笔记\img\Java基础\栈内存特点.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/栈内存示意图.png)
 
 ### Jvm中方法的执行分析
 
@@ -99,9 +99,9 @@ java中的构造方法是对java中new一个对象的之所以然的解释，new
 
 JVM虚拟机首先给主方法分配空间，主方法分配的空间首先进行压栈动作，当压栈动作执行之后执行方法内容，在内容中又调用了一个方法，则会给这个方法再分配空间，然后继续进行新的压栈动作，然后结束第二个方法的时候，发生弹栈动作，发生弹栈动作之后第二个内存空间释放出来，接着继续运行栈内存中的主方法，这是由于弹栈动作的发生，主方法所在的空间变成了栈顶，这时处于活跃状态，然后继续执行主方法，主方法结束后也发生弹栈动作，最后结束程序本身
 
-![](D:\Rolin的学习笔记\img\Java基础\栈内存示意图.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/栈内存特点.png)
 
-![](D:\Rolin的学习笔记\img\Java基础\栈内存特点2.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/对象和引用的概念.png)
 
 如果在主方法中定义一个int a=10;相当于是在主方法的分配存放在栈内存的空间里再分配一个空间，里面存储一个10，并且给这个变量取了名字，叫做a;
 
@@ -115,15 +115,15 @@ JVM虚拟机首先给主方法分配空间，主方法分配的空间首先进�
 
 **栈内存主要存放局部变量**
 
-![](D:\Rolin的学习笔记\img\Java基础\栈内存中方法分析.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/栈内存特点2.png)
 
 ## 参数传递
 
-![](D:\Rolin的学习笔记\img\Java基础\对象和引用的概念.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/栈内存中方法分析.png)
 
 **成员变量又称为实例变量，new出的对象在堆内存中开辟空间**
 
-![](D:\Rolin的学习笔记\img\Java基础\参数传递、.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/参数传递、.png)
 
 ## 方法重写
 
@@ -151,7 +151,7 @@ JVM虚拟机首先给主方法分配空间，主方法分配的空间首先进�
 
 4. 覆盖只针对方法，不能应用于属性
 
-   ![](D:\Rolin的学习笔记\img\Java基础\方法重载2.png)
+   ![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/方法重载2.png)
 
 # 对象
 
@@ -167,15 +167,15 @@ Java语言的核心机制就是**面向对象**，面向对象主要关注独立
 
 ## 类和对象的概念
 
-![](D:\Rolin的学习笔记\img\Java基础\类和对象的概念.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/类和对象的概念2.png)
 
 类的具体定义如下
 
-![](D:\Rolin的学习笔记\img\Java基础\类和对象的概念2.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/类和对象的概念.png)
 
 下面是具体的学生类例子
 
-![](D:\Rolin的学习笔记\img\Java基础\类和对象的概念3.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/类和对象的概念3.png)
 
 接着运行这个文件会产生学生类，即使student.class供给于JVM使用
 
@@ -191,11 +191,11 @@ Java语言的核心机制就是**面向对象**，面向对象主要关注独立
 
 new其实是一个运算符，其作用是创建一个对象，会在JVM的堆内存中开辟新的内存空间，注意是堆内存，不是栈内存
 
-![](D:\Rolin的学习笔记\img\Java基础\对象的创建和使用.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/对象的创建和使用2.png)
 
 在Student s = new Student()语句中，先执行new语句，在堆内存中先创造一个空间，在这个空间内也有各种空间，用于存放事先写在Student里的int，double，String类型的数据，先创造Student对象的大空间，然后在这个空间里会创造各种所需要的小空间并取名
 
-![](D:\Rolin的学习笔记\img\Java基础\对象的创建和使用2.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/对象的创建和使用3.png)
 
 局部变量在栈内存中存储，而成员变量以及对象本身在堆内存的Java对象内部存储
 
@@ -207,13 +207,13 @@ new其实是一个运算符，其作用是创建一个对象，会在JVM的堆�
 
 下图是示例图，这里将String对象画到堆内存中了，自己心里知道其是在方法区内存中的即可
 
-![](D:\Rolin的学习笔记\img\Java基础\对象的创建和使用3.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/对象的创建和使用.png)
 
 访问时必须要按顺序来访问，比如在这个程序里是由u起头进入到User对象，而在新的对象里才能访问到Address对象，因此如果要访问Address里的city等实例变量，语句的正确使用方法应该是u.addr.city
 
 如果其原来的指引的地址不再使用了，可以直接在addr中再new一个address，直观理解为其搬家了，实际在程序里的意思是原来的对象不再有引用，被垃圾回收了，而在堆空间里会创造一个新的address对象并将其地址覆盖原来的地址
 
-![](D:\Rolin的学习笔记\img\Java基础\对象的创建和使用4.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/对象的创建和使用4.png)
 
 # 封装、继承、多态
 
@@ -235,11 +235,11 @@ java面向对象有三大特征
 
 ### 封装的好处
 
-![](D:\Rolin的学习笔记\img\Java基础\封装的好处.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/封装的好处.png)
 
 ### 封装的步骤
 
-![](D:\Rolin的学习笔记\img\Java基础\封装的步骤.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/封装的步骤.png)
 
 对于封装，要进行的第一步是用private关键字修饰需要进行封装的变量，同时提供getandset方法作为对外提供的访问接口
 
@@ -257,7 +257,7 @@ java语言中只支持单继承，换言之就是一个类只能继承另外一�
 
 在java中，任何一个类都默认继承了Object类，因此Object类是超级父类
 
-![](D:\Rolin的学习笔记\img\Java基础\继承.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/继承.png)
 
 ## 多态
 
@@ -271,11 +271,11 @@ java语言中只支持单继承，换言之就是一个类只能继承另外一�
 
 向下转型就是父类型转换为子类型(downcasting)，又被称为强制类型转换，需要加强制类型转换符
 
-![](D:\Rolin的学习笔记\img\Java基础\多态.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/多态.png)
 
 Java程序分为编译阶段和运行阶段，运行阶段如果调用对象内的方法，则会调用真实对象的方法，但编译器会认为其对象是编译时指定的父类型对象，而非真实的子类型对象
 
-![](D:\Rolin的学习笔记\img\Java基础\多态2.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/static关键字.png)
 
 父类型的引用，指向了一个子类型的对象，导致了编译阶段和运行阶段绑定了两种不同的对象，这种情况或者说这种机制，我们就称之为是多态
 
@@ -316,7 +316,7 @@ public class App {
 
 解决这个问题的方法是使用instanceof运算符
 
-![](D:\Rolin的学习笔记\img\Java基础\instanceof.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/静态代码块.png)
 
 在进行任何的向下转换之前，都推荐使用instanceof语句来避免出现类型转换异常
 
@@ -332,17 +332,17 @@ public class App {
 
 **静态方法中无法直接访问实例变量和实例方法**，因为实例变量和实例方法是后于静态方法加载的，如果静态方法去访问这些方法，那么必然会发生空指针异常
 
-![](D:\Rolin的学习笔记\img\Java基础\static关键字.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/多态2.png)
 
 ### 静态代码块
 
-![](D:\Rolin的学习笔记\img\Java基础\静态代码块.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/instanceof.png)
 
 静态代码块是自上而下执行的，即使主方法在前面，实际运行程序的时候还是静态代码块先执行
 
 **通常在静态代码块中完成数据的准备工具，比如初始化连接池或者是解析XML配置文件**
 
-![](D:\Rolin的学习笔记\img\Java基础\static关键字2.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/this.png)
 
 ## final关键字
 
@@ -371,7 +371,7 @@ this关键词本身是一个变量，就储存在对象在堆内存开辟的空�
 
 每一个对象都有this，且this关键字在对象不同的时候其含义也不同，假设堆内存中有两个对象开辟的空间，当我们用第一个对象的时候，this所指的就是第一个对象的内存地址，但是当我们用第二个的时候，this就会指向第二个对象的内存地址
 
-![](D:\Rolin的学习笔记\img\Java基础\this.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/static关键字2.png)
 
 平时我们直接调用类中的变量时，我们使用的都是一种省略的写法，即直接写变量名，而实际上完整的写法应该是写入类名.变量名的，但是由于类名指的就是其自身，因此省略
 
@@ -413,7 +413,7 @@ super()是通过当前的构造方法区调用"父类"中的构造方法，存�
 
 this()和super()是不能同时出现的，它们中的任意一个都只能出现在构造方法的第一行，因此他们不可以调用两次及以上，而同时出现就会造成他们调用两次以上的情况
 
-![](D:\Rolin的学习笔记\img\Java基础\super.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/super.png)
 
 父类中如果只有有参构造方法，则继承的子类必须提供能够初始化父类构造方法的构造方法，其下调用super()方法来进行父类的初始化，如果有一些特殊的业务需求，比如需要将父类的对应属性进行初始化，那么也可以用上这种方式
 
@@ -439,7 +439,7 @@ class myDate extends Date{
 }
 ```
 
-![](D:\Rolin的学习笔记\img\Java基础\super2.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/super2.png)
 
 注意，虽然说调用了父类的构造方法，但实际上这个程序只创建了一个对象，这也是为什么只有一个this，因为只有一个对象
 
@@ -447,7 +447,7 @@ class myDate extends Date{
 
 当父类型和子类型有同名变量的时候，为了区分，我们也不省略super关键字
 
-![](D:\Rolin的学习笔记\img\Java基础\super3.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/访问控制权限修饰符.png)
 
 **super不是引用，是一块具有父类对象特征的空间**
 
@@ -483,7 +483,7 @@ default在使用的时候，是什么都不写的，什么都不写就表示缺�
 
 还记得我们之前讲过的对于继承对象其范围只能越大不能越小吗？当时由于我们不知道访问控制权限修饰符的大小范围，所以只说了public和private，但是现在我们就有了确切的访问范围了
 
-![](D:\Rolin的学习笔记\img\Java基础\访问控制权限修饰符.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/super3.png)
 
 # Java中的数据结构和管理内容
 
@@ -497,11 +497,11 @@ default在使用的时候，是什么都不写的，什么都不写就表示缺�
 
 我们可以使用import 语句，在包名下，类名前写上 import 包名.类名;，即可将给java类引入到指定类中，此时就可以省略包名了
 
-![](D:\Rolin的学习笔记\img\Java基础\import.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/数组.png)
 
 ## 数组
 
-![](D:\Rolin的学习笔记\img\Java基础\数组.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/import.png)
 
 ## 随机数
 

@@ -36,7 +36,7 @@ java中所有的流都是实现了java.io.Closeable接口的，也就是说，�
 
 所有的输入流都是实现了java.io.Flushable接口的，都是可刷新的，都有flush();方法，这个方法表示的意思是刷新管道，刷新表示的意思是将流中未输出的数据强制输出出去，我们在用完输入流之后只要记得使用flush();方法将剩余未输出数据输出出去，否则可能会导致数据丢失
 
-![](D:\Rolin的学习笔记\img\JavaSE\IO流.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/流.png)
 
 ## FileInputStream
 
@@ -202,7 +202,7 @@ BufferReader的方法，其中最重要的方法是这个String readLine();方�
 
 BufferedReader的构造方法是要求传一个字符流进去的，而如果我们创建了一个字节流，那我们将其传入的话编译器肯定是不会通过的，那此时我们就可以使用转换流来将字节流转换成字符流之后再传入
 
-![](D:\Rolin的学习笔记\img\JavaSE\流.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/Properties.png)
 
 对于第一个转换流的方法而言，in是结点流，而reader是包装流，但是对于第二个缓冲流的方法而言，reader是节点流，而br是包装流
 
@@ -266,7 +266,7 @@ java对象保存在硬盘中过程是将java对象切分开来保存在硬盘中
 
 而反之则是将硬盘中切分的java对象文件复原到内存中，这里需要使用到对象输入流ObjectInputStream方法，这个复原的过程我们称之为反序列化
 
-![](D:\Rolin的学习笔记\img\JavaSE\序列化.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/IO流.png)
 
 要令对象序列化，必须令对线实现Serializable接口，其是标志性接口，其内部没有任何方法，其主要作用的是令实现其的类加入一个标志给JVM虚拟机看，JVM虚拟机发现其实现了可序列接口之后，会自动在对象内部生成一个序列化版本号，用来区分不同的类
 
@@ -306,7 +306,7 @@ Properties是一个Map集合，集合里有key和value
 
 如果我们想要将userinfo里的内容直接写入到Porperties集合里我们该怎么做？
 
-![](D:\Rolin的学习笔记\img\JavaSE\Properties.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/序列化.png)
 
 先创建一个字符输入流对象，其实字节输入流运行，将文件传入之后我们创建一个Properties的Map集合，然后调用集合里的load方法将文件传入即可将文件中的值对应传到集合里了，而且如果我们需要变化集合内的值，我们可以直接变换文档里的值就可以了，这样就省去了我们创建集合时往集合里添加元素的许多繁琐异常的方法，只要往文件里写入我们需要的值，然后利用IO流和Properties就可以直接将值传入了，而且可以随时修改
 
@@ -328,7 +328,7 @@ Properties是一个Map集合，集合里有key和value
 
 - 在属性配置文件中，我们建议=号左右不要加任何的空格
 
-  ![](D:\Rolin的学习笔记\img\JavaSE\IO.png)
+  ![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/IO.png)
 
   
 

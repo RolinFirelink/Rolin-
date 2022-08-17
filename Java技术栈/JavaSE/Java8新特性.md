@@ -1,12 +1,12 @@
 Java8新特性具有许多好处
 
-![](D:\Rolin的学习笔记\img\JavaSE\java8.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/java8.png)
 
-![](D:\Rolin的学习笔记\img\JavaSE\并行流.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/并行流.png)
 
 # Lambda表达式
 
-![](D:\Rolin的学习笔记\img\JavaSE\Lambda.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/Lambda.png)
 
 光说肯定感受不到，下面来看看实际的例子
 
@@ -62,7 +62,7 @@ public class AppTest
 
 可以看到使用Lambda表达式写法是真的能方便非常多，真的太爽了，无论是从代码的编写还是阅读上，Lambda表达式都很舒服
 
-![](D:\Rolin的学习笔记\img\JavaSE\lambda2.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/lambda2.png)
 
 我们这里重点来介绍下第四点，其是这里应该写为函数式接口的实例，只能用于实现我们的接口的实现具体实现中才能使用，而且要求接口要实现的抽象方法只有一个，如果有多个那这玩意就没得用了
 
@@ -179,9 +179,9 @@ public class AppTest
 
 ## 函数式接口
 
-![](D:\Rolin的学习笔记\img\JavaSE\函数式接口.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/函数式接口.png)
 
-Java给我们提供了内置的四大核心函数式接口![](D:\Rolin的学习笔记\img\JavaSE\函数式接口2.png)
+Java给我们提供了内置的四大核心函数式接口![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/函数式接口2.png)
 
 然后是对其中的两个接口进行举例运用的代码
 
@@ -238,11 +238,11 @@ public class AppTest
 }
 ```
 
-![](D:\Rolin的学习笔记\img\JavaSE\函数式接口3.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/函数式接口3.png)
 
 ## 方法引用
 
-![](D:\Rolin的学习笔记\img\JavaSE\方法引用.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/方法引用.png)
 
 ```java
 public class AppTest
@@ -431,7 +431,7 @@ class Employee{
 
 ## 构造器引用与数组引用
 
-![](D:\Rolin的学习笔记\img\JavaSE\构造器.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/构造器.png)
 
 ```java
 public class AppTest
@@ -599,13 +599,13 @@ class Employee{
 
 ## Stream API
 
-![](D:\Rolin的学习笔记\img\JavaSE\stream.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/stream2.png)
 
-![](D:\Rolin的学习笔记\img\JavaSE\stream2.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/stream.png)
 
 那么最后我们来做一个总结
 
-![](D:\Rolin的学习笔记\img\JavaSE\stream3.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/stream3.png)
 
 ## Stream的实例化
 
@@ -646,7 +646,7 @@ class Employee{
 
 ### 通过集合实例化
 
-![](D:\Rolin的学习笔记\img\JavaSE\集合实例化.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/数组实例化.png)
 
 下面是演示代码
 
@@ -666,7 +666,7 @@ public void test1(){
 
 ### 通过数组实例化
 
-![](D:\Rolin的学习笔记\img\JavaSE\数组实例化.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/of.png)
 
 ```java
 //创建 Stream方式二：通过数组
@@ -686,7 +686,7 @@ public void test2() {
 
 ### Stream.of()
 
-![](D:\Rolin的学习笔记\img\JavaSE\of.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/无限流.png)
 
 创建代码如下
 
@@ -702,7 +702,7 @@ public void test3(){
 
 该方式可以创建一个无限流，用得比较少，了解即可
 
-![](D:\Rolin的学习笔记\img\JavaSE\无限流.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/集合实例化.png)
 
 那么我们创建无限流的测试代码如下，这里为了能看到效果我们这里还一并写了停止条件
 
@@ -729,7 +729,7 @@ public void test4(){
 
 我们先来学习中间操作的第一部分，筛选和切片，其下提供了四个方法用于中间操作，如下图所示
 
-![](D:\Rolin的学习笔记\img\JavaSE\筛选.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/映射.png)
 
 我们可以写入我们的测试代码如下，其中distinct()元素能发挥作用需要我们集合内存放的元素实现equals方法
 
@@ -771,7 +771,7 @@ public class AppTest
 
 ### 映射
 
-![](D:\Rolin的学习笔记\img\JavaSE\映射.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/排序.png)
 
 下面是示例代码，map方法可以获得接受一个函数作为参数，将函数处理应用到每一个元素上并最终映射成一个新的的元素，具体请看练习1的示例
 
@@ -844,7 +844,7 @@ public class AppTest
 
 ### 排序
 
-![](D:\Rolin的学习笔记\img\JavaSE\排序.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/归约.png)
 
 这一节比较简单，直接看示例代码吧
 
@@ -870,7 +870,7 @@ public class AppTest
 
 ### 匹配和查找
 
-我们先来学习匹配与查找，给我们提供了五个方法![](D:\Rolin的学习笔记\img\JavaSE\匹配.png)
+我们先来学习匹配与查找，给我们提供了五个方法![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/筛选.png)
 
 都是比较简单的内容，直接看下面的示例代码即可
 
@@ -927,7 +927,7 @@ public void test1(){
 
 ### 归约
 
-![](D:\Rolin的学习笔记\img\JavaSE\归约.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/匹配.png)
 
 ```java
 //归约
@@ -954,9 +954,9 @@ public void test3() {
 
 最后我们来看Stream的终止操作的最后一个，也就是收集
 
-![](D:\Rolin的学习笔记\img\JavaSE\收集.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/收集.png)
 
-![](D:\Rolin的学习笔记\img\JavaSE\收集2.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/收集2.png)
 
 ```java
 //3-收集
@@ -977,7 +977,7 @@ public void test4() {
 
 # Optional类
 
-![](D:\Rolin的学习笔记\img\JavaSE\Option.png)
+![](https://rolin-typora.oss-cn-guangzhou.aliyuncs.com/Option.png)
 
 ```java
 /**
